@@ -1,0 +1,20 @@
+
+body{
+	padding-top: 60px;
+	background: #dfe3ee;
+}
+
+*{
+	margin: 0;	
+	padding:0;
+	box-sizing: border-box;
+}
+
+#footer_section{
+	background: blue;
+}
+
+
+.no_padding_2{
+	padding: 0px;
+}
