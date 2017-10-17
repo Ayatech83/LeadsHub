@@ -11,7 +11,8 @@ body{
 }
 
 #footer_section{
-	background: blue;
+	/*background: blue;*/
+	width: 100%;
 }
 
 

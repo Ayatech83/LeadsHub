@@ -15,7 +15,6 @@
 
 </head>
 	<body style="background-color: #dfe3ee;">
-		<div class="container">
 			<section class="fixed-top" id="header">
 				<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ffe6e6">
 					<div class="container">	
@@ -40,7 +39,7 @@
 							    </ul>
 							    <div class="media">
 							    	<div class="media-body">
-							    		<a class="btn btn-danger" role="button" href="#" style="display: inline-block; margin-right: 8px;">Subscribe</a><a href="#">Client Login</a>
+							    		<a class="btn btn-danger" role="button" href="#" style="display: inline-block; margin-right: 8px;">Subscribe</a><a href="#" style="font-family: 'slabo'">Client Login</a>
 							    	</div><!--end of content body div-->
 							    	<img class="d-flex align-self-center" src="{% static 'images/login_avatar.png' %}" width="40px" height="40px" style="border-radius: 100px; margin-left: 5px;" />
 							    </div>			    
@@ -54,19 +53,18 @@
 				{% endblock content %}
 			</section>
 
-			<footer id="footer_section" style="margin-top: 4px;">
+				<footer class="container-fluid mt-0 bg-primary text-light" id="footer_section">
 				<!--footer data goins in here-->
 				<div class="container">
-					<div>
-						<p style="font-size: 12px; color: white; text-align: left; margin-bottom: 0px;">Copyright &copy;2017 Leads Hub</p>
-						<p style="font-size: 12px; color: white; text-align: left;">Terms & conditions | Privacy policy</p>
+					<div class="container">
+						<ul style="text-decoration: none; list-style: none; font-size: 10pt;">
+							<li>Copyright &copy;2017 Leads Hub</li>
+							<li><a class="text-light" href="#">Terms & conditions</a> | <a class="text-light" href="#">Privacy policy</a></li>
+						</ul>
 					</div>
 					
 				</div>		
 			</footer>
-
-		</div>
-		
 
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
