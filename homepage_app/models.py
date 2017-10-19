@@ -1,16 +1,13 @@
 from django.db import models
+from django.conf import settings
+from django.contrib.auth.models import User
 
-# Create your models here.
 
-class Company(models.Model):
-    comp_name = models.CharField(max_length=200)
-    comp_reg_num = models.CharField(max_length=20)
-    comp_addr = models.TextField()
-    comp_vat = models.CharField(max_length=20)
-    cont_person_title = models.CharField(max_length=7)
-    cont_person_name = models.CharField(max_length=20)
-    cont_person_surname = models.CharField(max_length=20)
-    cont_person_number = models.CharField(max_length=20)
-    cont_person_email = models.CharField(max_length=100)
-
+class Profile(models.Model):
+    user = models.OneToOneField(settings.AUTH_USER_MODEL)
+    date_of_birth = models.DateField(blank=True, null=True)
+    photo = models.ImageField(upload_to='users/%Y/%m/%d', blank=True)
+    
+    def __str__(self):
+        return 'Profile for user {}'.format(self.user.username)
 
