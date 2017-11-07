@@ -16,11 +16,12 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
+from website.views import (homePage_view, aboutUs_view, network_view,)
 
 
 urlpatterns = [
-    url(r'^accounts/$', include('accounts.urls')),
-    url(r'', include('HomePage.urls')),
+    url(r'^$', homePage_view, name='homepage'),
+    url(r'^about/$', aboutUs_view, name='about'),
+    url(r'^network/$', network_view, name='network'),
     url(r'^admin/', include(admin.site.urls)),
-
 ]
