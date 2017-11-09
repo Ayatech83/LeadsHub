@@ -57,7 +57,7 @@ ROOT_URLCONF = 'LeadsHub.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['accounts/templates'],
+        'DIRS': ['LeadsHub/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
