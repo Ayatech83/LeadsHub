@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 
+PROJECT_FOLDER = os.getcwd()
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -33,6 +35,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'website',
     'accounts',
+    'custom_user',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -41,6 +44,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
 ]
+
+################## AUTH ############################
+
+AUTH_USER_MODEL = "custom_user.CustomUser"
+AUTHENTICATION_BACKENDS = ('custom_user.backends.CustomUserAuth', )
+
+####################################################
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
