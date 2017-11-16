@@ -34,8 +34,8 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'website',
-    'accounts',
-    'custom_user',
+    #'accounts',
+    'user_account',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -47,8 +47,8 @@ INSTALLED_APPS = [
 
 ################## AUTH ############################
 
-AUTH_USER_MODEL = "custom_user.CustomUser"
-AUTHENTICATION_BACKENDS = ('custom_user.backends.CustomUserAuth', )
+AUTH_USER_MODEL = "user_account.CustomUser"
+AUTHENTICATION_BACKENDS = ('user_account.backends.CustomUserAuth', )
 
 ####################################################
 
