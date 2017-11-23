@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 
+PROJECT_FOLDER = os.getcwd()
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -32,7 +34,9 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'website',
-    'accounts',
+    #'accounts',
+    'crispy_forms',
+    'user_account',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -41,6 +45,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
 ]
+
+################## AUTH ############################
+
+AUTH_USER_MODEL = "user_account.CustomUser"
+AUTHENTICATION_BACKENDS = ('user_account.backends.CustomUserAuth', )
+
+####################################################
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -127,3 +138,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'LeadsHub', 'static'),)
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

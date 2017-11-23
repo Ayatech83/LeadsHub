@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+{% block title %}Subscribe{% endblock %}
+{% block content %}
+
+    <div class="container mb-1" style="background: white">
+        <div class="container p-2">
+            {% for field in form %}
+                {{ field.error }}
+            {% endfor %}
+
+            <form class="form-control p-2" action="/user_account/about/" method="post">
+                {% csrf_token %}
+                {{ form|crispy }}
+
+                <input class="btn btn-primary" type="submit" value="Submit" />
+
+            </form>
+        </div>
+
+    </div>
+
+
+
+{% endblock %}
