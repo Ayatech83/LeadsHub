@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}Leads Hub{% endblock %}
+{% block content %}
+
+{% for tender in tenders %}
+
+    <div>
+        {{ tender.refNum }}
+    </div>
+
+{% endfor %}
+
+{% endblock %}

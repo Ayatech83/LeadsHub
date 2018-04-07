@@ -25,7 +25,7 @@ def subscribe_view(request):
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('/about')
+            return redirect('/login_success')
     else:
         form = CustomUserCreationForm()
         args = {'form': form}

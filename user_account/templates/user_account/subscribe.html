@@ -10,7 +10,7 @@
                 {{ field.error }}
             {% endfor %}
 
-            <form class="form-control p-2" action="/user_account/about/" method="post">
+            <form class="form-control p-2" action="/user_account/login_success/" method="post">
                 {% csrf_token %}
                 {{ form|crispy }}
 

@@ -21,6 +21,7 @@ urlpatterns = [
     url(r'^$', homePage_view, name='homepage'),
     url(r'^about/$', aboutUs_view, name='about'),
     url(r'^user_account/', include('user_account.urls')),
+    url(r'^tenders/', include('tender_details.urls')),
     url(r'^network/$', network_view, name='network'),
     url(r'^admin/', include(admin.site.urls)),
 ]

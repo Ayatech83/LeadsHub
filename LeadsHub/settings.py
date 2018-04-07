@@ -34,7 +34,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'website',
-    #'accounts',
+    'tender_details',
     'crispy_forms',
     'user_account',
     'django.contrib.admin',
@@ -94,7 +94,7 @@ DATABASES = {
         'USER': 'root',
         'PASSWORD': 'ayaman',
         'HOST': 'localhost',
-        'PORT': '3306',
+        'PORT': '',
     }
 }
 
