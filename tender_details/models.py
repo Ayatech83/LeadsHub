@@ -8,3 +8,8 @@ class tender(models.Model):
     closingDate = models.CharField(max_length=50)
     siteInspection = models.TextField()
     description = models.TextField()
+
+
+class category(models.Model):
+    catCode = models.IntegerField(primary_key=True)
+    catDescription = models.CharField(max_length=100)
