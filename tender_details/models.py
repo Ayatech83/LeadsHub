@@ -11,5 +11,5 @@ class tender(models.Model):
 
 
 class category(models.Model):
-    catCode = models.IntegerField(primary_key=True)
+    catCode = models.IntegerField(blank=False)
     catDescription = models.CharField(max_length=100)

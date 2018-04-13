@@ -41,7 +41,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
     date_joined = models.DateTimeField(_('date joined'), default=timezone.now)
-    commodities = models.ManyToManyField('userCategories')
+    #commodities = models.ManyToManyField('category')
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username', 'first_name', 'last_name',
@@ -71,10 +71,4 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
         send_mail(subject, message, from_email, [self.email])
 
 
-
-class userCategories(models.Model):
-    class Meta:
-        verbose_name_plural = 'user categories'
-    userId = models.ForeignKey(CustomUser)
-    catId = models.ForeignKey(category)
 

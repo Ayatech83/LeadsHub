@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 from tender_details.models import tender
 
 def homePage_view(request):
