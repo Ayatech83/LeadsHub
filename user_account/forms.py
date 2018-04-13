@@ -17,7 +17,8 @@ class CustomUserCreationForm(UserCreationForm):
                   "company_name",
                   "company_reg_number",
                   "company_address",
-                  "area_code"
+                  "area_code",
+                  "commodities"
                   )
     def save(self, commit=True):
         user = super(CustomUserCreationForm, self).save(commit=False)
@@ -28,6 +29,7 @@ class CustomUserCreationForm(UserCreationForm):
         user.company_name = self.cleaned_data['company_name']
         user.company_reg_number = self.cleaned_data['company_reg_number']
         user.area_code = self.cleaned_data['area_code']
+        user.commodities = self.cleaned_data['commodities']
 
         if commit:
             user.save()

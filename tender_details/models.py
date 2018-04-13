@@ -10,6 +10,4 @@ class tender(models.Model):
     description = models.TextField()
 
 
-class category(models.Model):
-    catCode = models.IntegerField(blank=False)
-    catDescription = models.CharField(max_length=100)
+

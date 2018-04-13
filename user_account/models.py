@@ -3,7 +3,8 @@ from django.utils import timezone
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 from django.core.mail import send_mail
 from django.utils.translation import ugettext_lazy as _
-from tender_details.models import category
+
+
 
 class CustomUserManager(BaseUserManager):
     def _create_user(self, email, password, is_staff, is_superuser, **extra_fields):
@@ -41,7 +42,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
     date_joined = models.DateTimeField(_('date joined'), default=timezone.now)
-    #commodities = models.ManyToManyField('category')
+    commodities = models.ManyToManyField('category')
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username', 'first_name', 'last_name',
@@ -71,4 +72,6 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
         send_mail(subject, message, from_email, [self.email])
 
 
-
+class category(models.Model):
+    catCode = models.IntegerField(blank=False)
+    catDescription = models.CharField(max_length=100)
