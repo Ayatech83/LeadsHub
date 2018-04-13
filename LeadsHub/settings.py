@@ -49,8 +49,8 @@ INSTALLED_APPS = [
 
 ################## AUTH ############################
 
-AUTH_USER_MODEL = "user_account.CustomUser"
-AUTHENTICATION_BACKENDS = ('user_account.backends.CustomUserAuth', )
+#AUTH_USER_MODEL = "user_account.CustomUser"
+#AUTHENTICATION_BACKENDS = ('user_account.backends.CustomUserAuth', )
 
 ####################################################
 

@@ -1,6 +1,34 @@
 from django.db import models
-from django.utils import timezone
-from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
+from django.contrib.auth.models import User
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+
+class Company_Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    companyName = models.CharField(max_length=200, blank=False)
+    companyRegNum = models.CharField(max_length=30, blank=True)
+    contactPerson = models.CharField(max_length=100, blank=False)
+    contactNumber = models.CharField(max_length=20, blank=False)
+    emailAddress = models.CharField(max_length=100, blank=False)
+    companyAddress = models.TextField(max_length=500, blank=True)
+
+    #below are the details of the person that handles billing.
+    billingContactPerson = models.CharField(max_length=100, blank=False)
+    billingContactNumber = models.CharField(max_length=20, blank=False)
+    billingEmailAddress = models.CharField(max_length=100, blank=False)
+
+
+@receiver(post_save, sender=User)
+def create_company_profile(sender, instance, created, **kwargs):
+    if created:
+        Company_Profile.objects.create(user=instance)
+
+@receiver(post_save, sender=User)
+def save_company_profile(sender, instance, **kwargs):
+    instance.company_profile.save()
+
+
+'''from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 from django.core.mail import send_mail
 from django.utils.translation import ugettext_lazy as _
 
@@ -69,9 +97,6 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
 
     def email_user(self, subject, message, from_email=None):
         #Sends an email to this user.
-        send_mail(subject, message, from_email, [self.email])
+        send_mail(subject, message, from_email, [self.email])'''
 
 
-class category(models.Model):
-    catCode = models.IntegerField(blank=False)
-    catDescription = models.CharField(max_length=100)
