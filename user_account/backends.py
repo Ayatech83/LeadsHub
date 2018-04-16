@@ -1,4 +1,4 @@
-from .models import CustomUser
+'''from .models import CustomUser
 
 class CustomUserAuth(object):
     def authenticate(self, username=None, password=None):
@@ -16,4 +16,4 @@ class CustomUserAuth(object):
                 return user
             return None
         except CustomUser.DoesNotExist:
-            return None
+            return None'''

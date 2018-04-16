@@ -9,7 +9,8 @@
                     <p class="error">Sorry, that's not a valid username and password</p>
                 {% endif %}
 
-                <form class="p-3" action="/user_account/auth/" method="post">{% csrf_token %}
+                <form class="p-3 " action="/user_account/auth/" method="post">
+                    {% csrf_token %}
                     <div class="row form-group">
                         <label class="col-md-4" for="username">Username:</label>
                         <input class="col-md-8" type="text" name="username" value="" id="username">

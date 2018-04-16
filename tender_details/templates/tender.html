@@ -3,12 +3,203 @@
 {% block title %}Leads Hub{% endblock %}
 {% block content %}
 
-{% for tender in tenders %}
+        <div class="container mb-5">
+                 <div class="row">
+                    <div class="col-md-3" style="display:inline-block;">
+                        <span style="font-weight: bold; font-size: 18px;">REGIONS</span>
+                        <div class="form-control p-3" id="provincesDiv">
+                            <ul style="list-style: none; list-style-type: none">
+                                <li>
+                                    <input id="allPr" type="checkbox" name="n_allPr">
+                                    <label for="allPr">All Provinces</label>
+                                </li>
+                                <li>
+                                    <input id="ecPr" type="checkbox" name="n_ecPr">
+                                    <label for="ecPr">Eastern Cape</label>
+                                </li>
+                                <li>
+                                    <input id="fsPr" type="checkbox" name="n_fsPr">
+                                    <label for="fsPr">Free State</label>
+                                </li>
+                                <li>
+                                    <input id="gauPr" type="checkbox" name="n_gauPr">
+                                    <label for="gauPr">Gauteng</label>
+                                </li>
+                                <li>
+                                    <input id="kznPr" type="checkbox" name="n_kznPr">
+                                    <label for="kznPr">KwaZulu Natal</label>
+                                </li>
+                                <li>
+                                    <input id="mpPr" type="checkbox" name="n_mpPr">
+                                    <label for="mpPr">Mpumalanga</label>
+                                </li>
+                                <li>
+                                    <input id="nwPr" type="checkbox" name="n_nwPr">
+                                    <label for="nwPr">North West</label>
+                                </li>
+                                <li>
+                                    <input id="ncPr" type="checkbox" name="n_ncPr">
+                                    <label for="ncPr">Northern Cape</label>
+                                </li>
+                                <li>
+                                    <input id="liPr" type="checkbox" name="n_liPr">
+                                    <label for="liPr">Limpopo</label>
+                                </li>
+                                <li>
+                                    <input id="wcPr" type="checkbox" name="n_wcPr">
+                                    <label for="wcPr">Western Cape</label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
 
-    <div>
-        {{ tender.refNum }}
-    </div>
+                    <div class="col-sm-9" style="display:inline-block;">
+                        <span style="font-weight: bold; font-size: 18px;">INDUSTRY</span>
+                        <div class="form-control p-3" id="industry">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <ul style="list-style: none; list-style-type: none">
+                                        <li>
+                                            <input id="allPr" type="checkbox" name="n_allPr">
+                                            <label for="allPr">All Provinces</label>
+                                        </li>
+                                        <li>
+                                            <input id="ecPr" type="checkbox" name="n_ecPr">
+                                            <label for="ecPr">Eastern Cape</label>
+                                        </li>
+                                        <li>
+                                            <input id="fsPr" type="checkbox" name="n_fsPr">
+                                            <label for="fsPr">Free State</label>
+                                        </li>
+                                        <li>
+                                            <input id="gauPr" type="checkbox" name="n_gauPr">
+                                            <label for="gauPr">Gauteng</label>
+                                        </li>
+                                        <li>
+                                            <input id="kznPr" type="checkbox" name="n_kznPr">
+                                            <label for="kznPr">KwaZulu Natal</label>
+                                        </li>
+                                        <li>
+                                            <input id="mpPr" type="checkbox" name="n_mpPr">
+                                            <label for="mpPr">Mpumalanga</label>
+                                        </li>
+                                        <li>
+                                            <input id="nwPr" type="checkbox" name="n_nwPr">
+                                            <label for="nwPr">North West</label>
+                                        </li>
+                                        <li>
+                                            <input id="ncPr" type="checkbox" name="n_ncPr">
+                                            <label for="ncPr">Northern Cape</label>
+                                        </li>
+                                        <li>
+                                            <input id="liPr" type="checkbox" name="n_liPr">
+                                            <label for="liPr">Limpopo</label>
+                                        </li>
+                                        <li>
+                                            <input id="wcPr" type="checkbox" name="n_wcPr">
+                                            <label for="wcPr">Western Cape</label>
+                                        </li>
+                                    </ul>
+                                </div>
 
-{% endfor %}
+                                <div class="col-md-3">
+                                    <ul style="list-style: none; list-style-type: none">
+                                        <li>
+                                            <input id="allPr" type="checkbox" name="n_allPr">
+                                            <label for="allPr">All Provinces</label>
+                                        </li>
+                                        <li>
+                                            <input id="ecPr" type="checkbox" name="n_ecPr">
+                                            <label for="ecPr">Eastern Cape</label>
+                                        </li>
+                                        <li>
+                                            <input id="fsPr" type="checkbox" name="n_fsPr">
+                                            <label for="fsPr">Free State</label>
+                                        </li>
+                                        <li>
+                                            <input id="gauPr" type="checkbox" name="n_gauPr">
+                                            <label for="gauPr">Gauteng</label>
+                                        </li>
+                                        <li>
+                                            <input id="kznPr" type="checkbox" name="n_kznPr">
+                                            <label for="kznPr">KwaZulu Natal</label>
+                                        </li>
+                                        <li>
+                                            <input id="mpPr" type="checkbox" name="n_mpPr">
+                                            <label for="mpPr">Mpumalanga</label>
+                                        </li>
+                                        <li>
+                                            <input id="nwPr" type="checkbox" name="n_nwPr">
+                                            <label for="nwPr">North West</label>
+                                        </li>
+                                        <li>
+                                            <input id="ncPr" type="checkbox" name="n_ncPr">
+                                            <label for="ncPr">Northern Cape</label>
+                                        </li>
+                                        <li>
+                                            <input id="liPr" type="checkbox" name="n_liPr">
+                                            <label for="liPr">Limpopo</label>
+                                        </li>
+                                        <li>
+                                            <input id="wcPr" type="checkbox" name="n_wcPr">
+                                            <label for="wcPr">Western Cape</label>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <ul style="list-style: none; list-style-type: none">
+                                        <li>
+                                            <input id="allPr" type="checkbox" name="n_allPr">
+                                            <label for="allPr">All Provinces</label>
+                                        </li>
+                                        <li>
+                                            <input id="ecPr" type="checkbox" name="n_ecPr">
+                                            <label for="ecPr">Eastern Cape</label>
+                                        </li>
+                                        <li>
+                                            <input id="fsPr" type="checkbox" name="n_fsPr">
+                                            <label for="fsPr">Free State</label>
+                                        </li>
+                                        <li>
+                                            <input id="gauPr" type="checkbox" name="n_gauPr">
+                                            <label for="gauPr">Gauteng</label>
+                                        </li>
+                                        <li>
+                                            <input id="kznPr" type="checkbox" name="n_kznPr">
+                                            <label for="kznPr">KwaZulu Natal</label>
+                                        </li>
+                                        <li>
+                                            <input id="mpPr" type="checkbox" name="n_mpPr">
+                                            <label for="mpPr">Mpumalanga</label>
+                                        </li>
+                                        <li>
+                                            <input id="nwPr" type="checkbox" name="n_nwPr">
+                                            <label for="nwPr">North West</label>
+                                        </li>
+                                        <li>
+                                            <input id="ncPr" type="checkbox" name="n_ncPr">
+                                            <label for="ncPr">Northern Cape</label>
+                                        </li>
+                                        <li>
+                                            <input id="liPr" type="checkbox" name="n_liPr">
+                                            <label for="liPr">Limpopo</label>
+                                        </li>
+                                        <li>
+                                            <input id="wcPr" type="checkbox" name="n_wcPr">
+                                            <label for="wcPr">Western Cape</label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+        </div>
+
 
 {% endblock %}
