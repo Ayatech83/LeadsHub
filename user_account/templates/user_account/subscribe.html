@@ -12,9 +12,7 @@
 
             <form class="form-control p-2" action="/user_account/login_success/" method="post">
                 {% csrf_token %}
-                    {{ form.first_name.errors }}
-                    {{ form.first_name.label_tag }}
-                    {{ form.first_name }}
+                {{ form|crispy }}
 
                 <input class="btn btn-primary" type="submit" value="Submit" />
 
@@ -26,15 +24,15 @@
                 <div class="stepwizard-row setup-panel">
                     <div class="stepwizard-step">
                         <a href="#step-1" type="button" class="btn btn-primary btn-circle">1</a>
-                        <h6>Company Details</h6>
+                        <p>Step 1</p>
                     </div>
                     <div class="stepwizard-step">
                         <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
-                        <h6>Package Selection</h6>
+                        <p>Step 2</p>
                     </div>
                     <div class="stepwizard-step">
                         <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
-                        <h6>Payment Options</h6>
+                        <p>Step 3</p>
                     </div>
                 </div>
             </div>
@@ -43,158 +41,33 @@
                 <div class="row setup-content" id="step-1">
                     <div class="col-xs-12">
                         <div class="col-md-12">
-                            {% csrf_token %}
+                            <h3> Company Details</h3>
                             <div class="form-group">
-                                {{ form.companyName.errors }}
-                                <label class="control-label" for="{{ form.companyName.id_for_label }}">Company Name</label>
-                                {{ form.companyName }}
-                                <!--<input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Company Name" />-->
+                                <label class="control-label">Company Name</label>
+                                <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Company Name" />
                             </div>
-
                             <div class="form-group">
-                                {{ form.companyRegNum.errors }}
-                                <label class="control-label" for="{{ form.companyRegNum.id_for_label }}">Company Reg Number</label>
-                                {{ form.companyRegNum }}
-                                <!--<input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Company Name" />-->
+                                <label class="control-label">Company Address</label>
+                                <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Company Address"  />
                             </div>
-
-                            <div class="form-group">
-                                {{ form.contactPerson.errors }}
-                                <label class="control-label" for="{{ form.contactPerson.id_for_label }}">Contact Person</label>
-                                {{ form.contactPerson }}
-                                <!--<input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Company Name" />-->
-                            </div>
-
-                            <div class="form-group">
-                                {{ form.contactNumber.errors }}
-                                <label class="control-label" for="{{ form.contactNumber.id_for_label }}">Contact Number</label>
-                                {{ form.contactNumber }}
-                                <!--<input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Company Name" />-->
-                            </div>
-
-                            <div class="form-group">
-                                {{ form.emailAddress.errors }}
-                                <label class="control-label" for="{{ form.emailAddress.id_for_label }}">Email Address</label>
-                                {{ form.emailAddress }}
-                                <!--<input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Company Name" />-->
-                            </div>
-
-                            <div class="form-group">
-                                {{ form.companyAddress.errors }}
-                                <label class="control-label" for="{{ form.companyAddress.id_for_label }}">Company Address</label>
-                                {{ form.companyAddress }}
-                                <!--<input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Company Name" />-->
-                            </div>
-
                             <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
                         </div>
                     </div>
                 </div>
 
-                <div class="row setup-content w-100 pt-5" id="step-2">
-                    <div class="col-xs-12 w-100">
-                        <div class="col-md-12 w-100">
-                            <table class="table-responsive table-striped w-100" id="packages-table">
-                              <thead>
-                                <tr>
-                                  <td scope="col">Package</td>
-                                  <td scope="col">Features</td>
-                                  <td align="center" scope="col">Monthly</td>
-                                  <td align="center" scope="col">Annual</td>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <tr>
-                                  <td class="package_name" scope="row" style="color: #C9AE5D;">Bronze</td>
-                                  <td>
-                                      <ul class="list-tick text-muted">
-                                          <li>1 Province</li>
-                                          <li>1 Email recipient </li>
-                                          <li>10 Search Keywords for Email Alerts </li>
-                                      </ul>
-                                  </td>
-                                  <td align="center">
-                                      <div>
-                                          <span style="color: blue; font-size: 22px;">R399.00</span><span>/Month</span><br>
-                                          <input type="button" value="Select" class="btn btn-success mt-2 btn-small sp-select">
-                                      </div>
-                                  </td>
-                                  <td align="center">
-                                      <div>
-                                          <span style="color: blue; font-size: 22px;">R4788.00</span><span>/Annum</span><br>
-                                          <input type="button" value="Select" class="btn btn-success mt-2 btn-small sp-select">
-                                      </div>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td class="package_name" scope="row" style="color: #C0C0C0;">Silver</td>
-                                  <td>
-                                      <ul class="list-tick text-muted">
-                                          <li>1 Province</li>
-                                          <li>3 Email recipients </li>
-                                          <li>20 Search Keywords for Email Alerts </li>
-                                      </ul>
-                                  </td>
-                                  <td align="center">
-                                      <div>
-                                          <span style="color: blue; font-size: 22px;">R850.00</span><span>/Month</span><br>
-                                          <input type="button" value="Select" class="btn btn-success mt-2 btn-small sp-select">
-                                      </div>
-                                  </td>
-                                  <td align="center">
-                                      <div>
-                                          <span style="color: blue; font-size: 22px;">10200.00</span><span>/Annum</span><br>
-                                          <input type="button" value="Select" class="btn btn-success mt-2 btn-small sp-select">
-                                      </div>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td class="package_name" scope="row" style="color: #FFD700;">Gold</td>
-                                  <td>
-                                      <ul class="list-tick text-muted" style="color: #FFD700">
-                                          <li>1 Province</li>
-                                          <li>10 Email recipients </li>
-                                          <li>30 Search Keywords for Email Alerts </li>
-                                      </ul>
-                                  </td>
-                                  <td align="center">
-                                      <div>
-                                          <span style="color: blue; font-size: 22px;">1300.00</span><span>/Month</span><br>
-                                          <input type="button" value="Select" class="btn btn-success mt-2 btn-small sp-select">
-                                      </div>
-                                  </td>
-                                  <td align="center">
-                                      <div>
-                                          <span style="color: blue; font-size: 22px;">15600.00</span><span>/Annum</span><br>
-                                          <input type="button" value="Select" class="btn btn-success mt-2 btn-small sp-select">
-                                      </div>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td class="package_name" scope="row" style="color: blue;">Corporate</td>
-                                  <td>
-                                      <ul class="list-tick text-muted">
-                                          <li>1 Province</li>
-                                          <li>10 to 20 Email recipient </li>
-                                          <li>30 to 100 Search Keywords for Email Alerts</li>
-                                      </ul>
-                                  </td>
-                                  <td align="center">
-                                      <div>
-                                          <span style="color: blue; font-size: 22px;">2500.00</span><span>/Month</span><br>
-                                          <input type="button" value="Select" class="btn btn-success mt-2 btn-small sp-select">
-                                      </div>
-                                  </td>
-                                  <td align="center" class="ml-2">
-                                      <div>
-                                          <span style="color: blue; font-size: 22px;">30000.00</span><span>/Annum</span><br>
-                                          <input type="button" value="Select" class="btn btn-success mt-2 btn-small sp-select">
-                                      </div>
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table>
-
+                <div class="row setup-content" id="step-2">
+                    <div class="col-xs-12">
+                        <div class="col-md-12">
+                            <h3> Address Details</h3>
+                            <div class="form-group">
+                                <label class="control-label">First Name</label>
+                                <input  maxlength="100" type="text" required="required" class="form-control" placeholder="Enter First Name"  />
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Last Name</label>
+                                <input maxlength="100" type="text" required="required" class="form-control" placeholder="Enter Last Name" />
+                            </div>
+                            <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
                         </div>
                     </div>
                 </div>
@@ -202,7 +75,7 @@
                 <div class="row setup-content" id="step-3">
                     <div class="col-xs-12">
                         <div class="col-md-12">
-
+                            <h3> Step 3</h3>
                             <button class="btn btn-success btn-lg pull-right" type="submit">Finish!</button>
                         </div>
                     </div>

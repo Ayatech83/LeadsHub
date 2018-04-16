@@ -142,35 +142,3 @@ body{
   line-height: 1.428571429;
   border-radius: 15px;
 }
-
-
-/*styling the ticks*/
-.list-tick > li {
-    display: block;
-    padding: 3px 0;
-    line-height: 30px;
-    position: relative;
-    padding-left: 25px;
-}
-
-.list-tick > li::before {
-    content: "\2714";
-    font-family: 'icomoon';
-    top: 5px;
-    left: 0;
-    position: absolute;
-    pointer-events: none;
-    color: #5FA533;
-    font-size: inherit;
-}
-
-/*style of the package fonts*/
-.package_name{
-    font-family: Gugi;
-    font-size: 26px;
-}
-
-/*Centering text in the packages table*/
-#packages-table > td{
-    margin-left: 5px;
-}

@@ -1,15 +1,7 @@
-from django import forms
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+from .models import CustomUser
 
-class UserForm(forms.Form):
-    companyName = forms.CharField(label='Company Name',max_length=200, required=True, widget=forms.TextInput(attrs={'class':'form-control'}))
-    companyRegNum = forms.CharField(label='Company Reg Number', max_length=200, widget=forms.TextInput(attrs={'class':'form-control'}))
-    contactPerson = forms.CharField(label='Contact Person', max_length=200, widget=forms.TextInput(attrs={'class':'form-control'}))
-    contactNumber = forms.CharField(label='Contact Number', max_length=200, widget=forms.TextInput(attrs={'class':'form-control'}))
-    emailAddress = forms.CharField(label='Email Address', max_length=200, widget=forms.TextInput(attrs={'class':'form-control'}))
-    companyAddress = forms.CharField(label='Company Address', widget=forms.Textarea(attrs={'class':'form-control'}))
-
-
-'''class CustomUserCreationForm(UserCreationForm):
+class CustomUserCreationForm(UserCreationForm):
     #A form that creates the user, with no priviledges, from the given email and password.
     def __init__(self, *args, **kargs):
         super(CustomUserCreationForm, self).__init__(*args, **kargs)
@@ -53,5 +45,4 @@ class CustomUserChangeForm(UserChangeForm):
 
     class Meta:
         model = CustomUser
-        fields = "__all__" 
-        '''
+        fields = "__all__"

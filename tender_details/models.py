@@ -13,7 +13,3 @@ class tender(models.Model):
 class category(models.Model):
     catCode = models.IntegerField(blank=False)
     catDescription = models.CharField(max_length=100)
-
-
-class provinces(models.Model):
-    provinceName = models.CharField(max_length=200)
